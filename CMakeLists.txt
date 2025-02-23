@@ -70,6 +70,14 @@ else()
     add_library(${LIBTARGET} STATIC ${SRCS} ${HDRS})
 endif()
 
+# # Find and link pthread on Unix-like systems
+# if (UNIX)
+#     find_package(Threads REQUIRED)
+#     target_link_libraries(${LIBTARGET} PRIVATE Threads::Threads)
+#     target_compile_definitions(${LIBTARGET} PRIVATE -DHasTHREADS=1)
+#     message(STATUS "Threads: ${CMAKE_THREAD_LIBS_INIT}")
+# endif()
+
 set_target_properties(
     ${LIBTARGET}
         PROPERTIES
